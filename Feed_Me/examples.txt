@@ -1,0 +1,29 @@
+1. Combine all text files in a directory:
+   python eat_me.py /path/to/directory /path/to/output/output.txt
+
+2. Combine files including subdirectories:
+   python eat_me.py /path/to/directory /path/to/output/output.txt --include-subdirs
+
+3. Combine files and exclude certain patterns:
+   python eat_me.py /path/to/directory /path/to/output/output.txt --exclude-patterns "*.bak" "*.tmp"
+
+4. Combine files and include only specific file types:
+   python eat_me.py /path/to/directory /path/to/output/output.txt --include-patterns "*.txt" "*.md"
+
+5. Combine files with a custom separator between file contents:
+   python eat_me.py /path/to/directory /path/to/output/output.txt --separator "\n\n=== END OF FILE ===\n\n"
+
+6. Combine files with a limit on the output file size:
+   python eat_me.py /path/to/directory /path/to/output/output.txt --max-size 104857600  # 100 MB limit
+
+7. Combine files and preserve the original formatting of each file:
+   python eat_me.py /path/to/directory /path/to/output/output.txt --preserve-formatting
+
+8. Combine files with detailed logging to a custom log file:
+   python eat_me.py /path/to/directory /path/to/output/output.txt --log-file "/path/to/logs/combiner.log"
+
+9. Combine files, filtering by multiple include and exclude patterns:
+   python eat_me.py /path/to/directory /path/to/output/output.txt --include-patterns "*.txt" "*.csv" --exclude-patterns "test_*" "example_*"
+
+10. Schedule a script to run automatically (e.g., using cron on Linux):
+   0 22 * * * /usr/bin/python /path/to/eat_me.py /path/to/directory /path/to/output/daily.txt --include-subdirs > /path/to/logs/daily_diet.log 2>&1
